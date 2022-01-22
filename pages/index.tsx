@@ -12,7 +12,7 @@ const Home: NextPage = () => {
       <Box>You can send scam sms in Singapore to anyone</Box>
 
       <Flex direction={{ base: 'column', md: 'row' }}>
-        <Box w={{ base: '100%', md: '50%' }}>
+        <Box w={{ base: '100%', md: '70%' }}>
           <Stack direction={{ base: 'column', lg: 'row' }} p={3}>
             <Box w="100%">
               <Box borderWidth="1px" borderRadius="md" py={3} px={5}>
@@ -29,7 +29,7 @@ const Home: NextPage = () => {
           </Stack>
         </Box>
 
-        <Box w={{ base: '100%', md: '50%' }}>
+        <Box w={{ base: '100%', md: '30%' }}>
           <Box>
             <Heading as="h2">What is this site?</Heading>
             <Text>
