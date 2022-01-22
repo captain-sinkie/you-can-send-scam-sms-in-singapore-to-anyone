@@ -11,9 +11,11 @@
 # next.js
 /.next/
 /out/
+next.config.js
 
 # production
 /build
+dist/
 
 # misc
 .DS_Store
@@ -30,8 +32,15 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
+# next production specific files
+next.config.js
+
 # vercel
 .vercel
 
-# typescript
-*.tsbuildinfo
+# vscode
+settings.json
+
+# sitemap
+public/sitemap.xml
+public/robots.txt
