@@ -14,7 +14,7 @@ import {
 // components
 import { ModeSwitcher } from './ModeSwitcher'
 import { PreviewFields } from './PreviewFields'
-import { LiveFields } from './LiveFields'
+import { LiveFields } from './Fields/Live'
 import { sendLiveSMSMessage, sendPreviewSMSMessage } from './sendMessage'
 
 export const SMSForm = () => {
