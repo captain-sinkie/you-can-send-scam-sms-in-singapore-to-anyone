@@ -9,6 +9,7 @@ import {
   HStack,
   Spacer,
   LightMode,
+  Text,
   useBoolean,
 } from '@chakra-ui/react'
 // components
@@ -46,6 +47,11 @@ export const SMSForm = () => {
       {live ? <LiveFields /> : <PreviewFields />}
 
       <Box mt={4}>
+        {live && (
+          <Text fontSize="sm" fontStyle="italic" mb={1}>
+            Note: The target phone will receive this SMS.
+          </Text>
+        )}
         <LightMode>
           <Button
             mb={{ base: '4', md: '0' }}
@@ -56,7 +62,7 @@ export const SMSForm = () => {
             fontSize="md"
             fontWeight="bold"
           >
-            Send SMS
+            {live ? 'Send SMS' : 'Send SMS in Preview'}
           </Button>
         </LightMode>
       </Box>
