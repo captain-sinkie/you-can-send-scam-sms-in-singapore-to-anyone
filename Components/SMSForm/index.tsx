@@ -1,9 +1,10 @@
 // packages
 import React from 'react'
 // chakra
-import { chakra, Box, Button, Stack, LightMode } from '@chakra-ui/react'
+import { chakra, Box, Button, Heading, HStack, Stack, Spacer, LightMode } from '@chakra-ui/react'
 // components
 import { InputField } from '../InputField'
+import { ModeSwitcher } from './ModeSwitcher'
 
 export const SMSForm = () => {
   const handleSubmit = (e: React.SyntheticEvent) => {
@@ -14,14 +15,23 @@ export const SMSForm = () => {
   }
 
   return (
-    <chakra.form as="form" pt={8} pb={3} onSubmit={handleSubmit}>
-      <Stack spacing={6}>
+    <chakra.form as="form" onSubmit={handleSubmit}>
+      <HStack>
+        <Heading as="h1" fontSize="3xl">
+          Send a SMS
+        </Heading>
+
+        <Spacer />
+
+        <ModeSwitcher />
+      </HStack>
+      <Stack spacing={6} pt={6}>
         <InputField label="Sender Name" type="text" />
-        <InputField label="Phone" type="number" />
+        {/* <InputField label="Phone" type="number" /> */}
         <InputField label="Message" as="textarea" height="120px" pt={2} />
       </Stack>
 
-      <Box mt={8}>
+      <Box mt={4}>
         <LightMode>
           <Button
             mb={{ base: '4', md: '0' }}

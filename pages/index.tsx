@@ -8,17 +8,14 @@ import { SMSForm } from '../Components/SMSForm'
 
 const Home: NextPage = () => {
   return (
-    <Box>
+    <Box px={3}>
       <Box>You can send scam sms in Singapore to anyone</Box>
 
       <Flex direction={{ base: 'column', md: 'row' }}>
         <Box w={{ base: '100%', md: '70%' }}>
-          <Stack direction={{ base: 'column', lg: 'row' }} p={3}>
+          <Stack direction={{ base: 'column', lg: 'row' }} py={3}>
             <Box w="100%">
               <Box borderWidth="1px" borderRadius="md" py={3} px={5}>
-                <Heading as="h1" fontSize="3xl">
-                  Send a SMS
-                </Heading>
                 <SMSForm />
               </Box>
             </Box>
