@@ -4,9 +4,16 @@ import React from 'react'
 import { HStack, Switch, Text, useBoolean } from '@chakra-ui/react'
 // components
 
-export const ModeSwitcher = () => {
-  const [live, setLive] = useBoolean(false)
+type Props = {
+  live: boolean
+  setLive: {
+    readonly on: () => void
+    readonly off: () => void
+    readonly toggle: () => void
+  }
+}
 
+export const ModeSwitcher: React.FC<Props> = ({ live, setLive }) => {
   return (
     <HStack>
       <Text>{live ? 'Live' : 'Preview'}</Text>

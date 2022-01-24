@@ -1,17 +1,34 @@
 // packages
 import React from 'react'
 // chakra
-import { chakra, Box, Button, Heading, HStack, Stack, Spacer, LightMode } from '@chakra-ui/react'
+import {
+  chakra,
+  Box,
+  Button,
+  Heading,
+  HStack,
+  Spacer,
+  LightMode,
+  useBoolean,
+} from '@chakra-ui/react'
 // components
-import { InputField } from '../InputField'
 import { ModeSwitcher } from './ModeSwitcher'
+import { PreviewFields } from './PreviewFields'
+import { LiveFields } from './LiveFields'
+import { sendLiveSMSMessage, sendPreviewSMSMessage } from './sendMessage'
 
 export const SMSForm = () => {
+  const [live, setLive] = useBoolean(false)
+
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault()
 
     // handle submit logic here
-    alert('submitted')
+    if (live) {
+      sendLiveSMSMessage()
+    } else {
+      sendPreviewSMSMessage()
+    }
   }
 
   return (
@@ -23,13 +40,10 @@ export const SMSForm = () => {
 
         <Spacer />
 
-        <ModeSwitcher />
+        <ModeSwitcher live={live} setLive={setLive} />
       </HStack>
-      <Stack spacing={6} pt={6}>
-        <InputField label="Sender Name" type="text" />
-        {/* <InputField label="Phone" type="number" /> */}
-        <InputField label="Message" as="textarea" height="120px" pt={2} />
-      </Stack>
+
+      {live ? <LiveFields /> : <PreviewFields />}
 
       <Box mt={4}>
         <LightMode>
