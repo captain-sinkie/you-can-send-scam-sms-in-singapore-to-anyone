@@ -7,9 +7,19 @@ import { useApp } from '../../../../context/App'
 // components
 import { Header } from './Header'
 import { MessageBubble } from './MessageBubble'
+import { Message } from '../../../../context/App/interface'
 
 export const ChatScreen = () => {
-  const { messages } = useApp().state
+  const { chats } = useApp().state
+  const index = chats.findIndex((chat) => chat.senderId == 'OCBC')
+
+  let messages: Message[] = []
+  if (index != 1) {
+    messages = chats[index].messages
+  } else {
+    messages = []
+  }
+
   const endRef = React.useRef<null | HTMLDivElement>(null)
 
   React.useEffect(() => {

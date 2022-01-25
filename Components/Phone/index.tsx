@@ -15,7 +15,7 @@ export const Phone = () => {
   const { dispatch } = useApp()
 
   React.useEffect(() => {
-    setMessagesDispatch(dispatch, initialMessages)
+    setMessagesDispatch(dispatch, initialMessages.senderId, initialMessages.messages)
   }, [])
 
   return (

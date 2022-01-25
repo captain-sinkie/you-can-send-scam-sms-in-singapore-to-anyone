@@ -26,7 +26,7 @@ export const SMSForm = () => {
   const [live, setLive] = useBoolean(false)
   const { dispatch } = useApp()
   const { dispatch: newMessageDispatch, state } = useNewMessage()
-  const { content } = state
+  const { senderId, content } = state
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault()
@@ -35,7 +35,7 @@ export const SMSForm = () => {
     if (live) {
       sendLiveSMSMessage()
     } else {
-      insertMessageDispatch(dispatch, content)
+      insertMessageDispatch(dispatch, senderId, content)
       clearNewMessageDispatch(newMessageDispatch)
     }
   }

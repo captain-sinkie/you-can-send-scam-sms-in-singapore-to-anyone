@@ -3,6 +3,11 @@ export interface Message {
   time: Date
 }
 
-export interface AppStateType {
+export interface Chat {
+  senderId: string
   messages: Message[]
+}
+
+export interface AppStateType {
+  chats: Chat[]
 }
