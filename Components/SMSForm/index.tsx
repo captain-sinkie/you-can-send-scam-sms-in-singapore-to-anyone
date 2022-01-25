@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react'
 // context
 import { insertMessageDispatch, useApp } from '../../context/App'
-import { setNewMessageContentDispatch, useNewMessage } from '../../context/newMessage'
+import { clearNewMessageDispatch, useNewMessage } from '../../context/newMessage'
 // components
 import { ModeSwitcher } from './ModeSwitcher'
 import { PreviewFields } from './PreviewFields'
@@ -36,7 +36,7 @@ export const SMSForm = () => {
       sendLiveSMSMessage()
     } else {
       insertMessageDispatch(dispatch, content)
-      setNewMessageContentDispatch(newMessageDispatch, '')
+      clearNewMessageDispatch(newMessageDispatch)
     }
   }
 
