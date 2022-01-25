@@ -9,9 +9,13 @@ import { Header } from './Header'
 import { MessageBubble } from './MessageBubble'
 import { Message } from '../../../../context/App/interface'
 
-export const ChatScreen = () => {
+type Props = {
+  senderId: string
+}
+
+export const ChatScreen: React.FC<Props> = ({ senderId }) => {
   const { chats } = useApp().state
-  const index = chats.findIndex((chat) => chat.senderId == 'OCBC')
+  const index = chats.findIndex((chat) => chat.senderId == senderId)
 
   let messages: Message[] = []
   if (index != -1) {

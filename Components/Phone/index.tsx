@@ -3,6 +3,7 @@ import React from 'react'
 // chakra
 // context
 import { setMessagesDispatch, useApp } from '../../context/App'
+import { MobileRouterProvider } from '../../context/MobileRouter'
 // components
 import { SkeletonWrapper } from './SkeletonWrapper'
 import { Screen } from './Screen'
@@ -21,7 +22,9 @@ export const Phone = () => {
   return (
     <SkeletonWrapper>
       <Notch />
-      <Screen />
+      <MobileRouterProvider>
+        <Screen />
+      </MobileRouterProvider>
       <Dock />
     </SkeletonWrapper>
   )
