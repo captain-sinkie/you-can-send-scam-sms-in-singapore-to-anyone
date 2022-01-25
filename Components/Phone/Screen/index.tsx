@@ -6,6 +6,11 @@ import { Box } from '@chakra-ui/react'
 import { ChatScreen } from './ChatScreen'
 
 export const Screen = () => {
+  const Router = () => {
+    // TODO: add routing logic here
+    return <ChatScreen />
+  }
+
   return (
     <Box
       bgColor="white"
@@ -16,7 +21,7 @@ export const Screen = () => {
       boxShadow="xl"
       borderRadius="sm"
     >
-      <ChatScreen />
+      <Router />
     </Box>
   )
 }
