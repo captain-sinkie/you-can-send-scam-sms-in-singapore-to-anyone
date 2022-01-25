@@ -11,7 +11,7 @@ export const useApp = (): {
 } => {
   const { state, dispatch } = React.useContext(AppContext)
   if (state === undefined) {
-    throw new Error('useNotebook must be used within an AppProvider')
+    throw new Error('useApp must be used within an AppProvider')
   }
   return { state, dispatch }
 }

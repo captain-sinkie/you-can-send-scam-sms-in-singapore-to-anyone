@@ -10,6 +10,15 @@ import { MessageBubble } from './MessageBubble'
 
 export const ChatScreen = () => {
   const { messages } = useApp().state
+  const endRef = React.useRef<null | HTMLDivElement>(null)
+
+  React.useEffect(() => {
+    if (endRef) {
+      if (endRef.current) {
+        endRef.current.scrollIntoView({ block: 'nearest', inline: 'nearest' })
+      }
+    }
+  }, [messages])
 
   return (
     <Box>
@@ -18,6 +27,7 @@ export const ChatScreen = () => {
         {messages.map(({ content, time }, i) => (
           <MessageBubble content={content} time={time} key={i} />
         ))}
+        <Box ref={endRef} />
       </Box>
     </Box>
   )

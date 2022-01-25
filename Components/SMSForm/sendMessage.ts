@@ -4,7 +4,3 @@ export const sendLiveSMSMessage = () => {
 
   alert('sent from live')
 }
-
-export const sendPreviewSMSMessage = () => {
-  alert('sent from preview')
-}

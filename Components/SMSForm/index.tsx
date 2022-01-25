@@ -12,14 +12,21 @@ import {
   Text,
   useBoolean,
 } from '@chakra-ui/react'
+// context
+import { insertMessageDispatch, useApp } from '../../context/App'
+import { setNewMessageContentDispatch, useNewMessage } from '../../context/newMessage'
 // components
 import { ModeSwitcher } from './ModeSwitcher'
 import { PreviewFields } from './PreviewFields'
 import { LiveFields } from './Fields/Live'
-import { sendLiveSMSMessage, sendPreviewSMSMessage } from './sendMessage'
+// methods
+import { sendLiveSMSMessage } from './sendMessage'
 
 export const SMSForm = () => {
   const [live, setLive] = useBoolean(false)
+  const { dispatch } = useApp()
+  const { dispatch: newMessageDispatch, state } = useNewMessage()
+  const { content } = state
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault()
@@ -28,7 +35,8 @@ export const SMSForm = () => {
     if (live) {
       sendLiveSMSMessage()
     } else {
-      sendPreviewSMSMessage()
+      insertMessageDispatch(dispatch, content)
+      setNewMessageContentDispatch(newMessageDispatch, '')
     }
   }
 
