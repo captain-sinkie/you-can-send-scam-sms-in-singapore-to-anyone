@@ -14,10 +14,8 @@ export const ChatScreen = () => {
   const index = chats.findIndex((chat) => chat.senderId == 'OCBC')
 
   let messages: Message[] = []
-  if (index != 1) {
+  if (index != -1) {
     messages = chats[index].messages
-  } else {
-    messages = []
   }
 
   const endRef = React.useRef<null | HTMLDivElement>(null)

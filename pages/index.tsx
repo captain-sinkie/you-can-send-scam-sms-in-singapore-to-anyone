@@ -1,7 +1,7 @@
 // packages
 import type { NextPage } from 'next'
 // chakra
-import { Box, Button, Center, Flex, Heading, Stack, Spacer, Text } from '@chakra-ui/react'
+import { Box, Center, Flex, Heading, Stack, Spacer, Text } from '@chakra-ui/react'
 // components
 import { Phone } from '../Components/Phone'
 import { SMSForm } from '../Components/SMSForm'

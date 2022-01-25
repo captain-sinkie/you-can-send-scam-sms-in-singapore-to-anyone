@@ -1,14 +1,7 @@
 // packages
 import React from 'react'
 // chakra
-import {
-  Stack,
-  Select,
-  Text,
-  FormControl,
-  FormLabel,
-  useColorModeValue as mode,
-} from '@chakra-ui/react'
+import { Select, FormControl, FormLabel, useColorModeValue as mode } from '@chakra-ui/react'
 // components
 
 export const SMSServiceProviderSelect = () => {
