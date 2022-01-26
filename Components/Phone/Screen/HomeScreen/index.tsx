@@ -1,7 +1,7 @@
 // packages
 import React from 'react'
 // chakra
-import { Box, Stack, LinkBox, StackDivider } from '@chakra-ui/react'
+import { Box, Stack, HStack, LinkBox, StackDivider } from '@chakra-ui/react'
 // context
 import { setRouteDispatch, useMobileRouter } from '../../../../context/MobileRouter'
 import { useApp } from '../../../../context/App'
@@ -36,8 +36,17 @@ export const HomeScreen = () => {
   return (
     <Box h="375px" overflowY="scroll">
       <Stack divider={<StackDivider />}>
-        {chats.map(({ senderId, messages }) => (
-          <MessagePreview senderId={senderId} content={messages[messages.length - 1].content} />
+        <Box fontWeight="bold" fontSize="2xl" pl={2}>
+          Messages
+        </Box>
+        {chats.map(({ senderId, messages }, i) => (
+          <HStack>
+            <MessagePreview
+              key={i}
+              senderId={senderId}
+              content={messages[messages.length - 1].content}
+            />
+          </HStack>
         ))}
       </Stack>
     </Box>
