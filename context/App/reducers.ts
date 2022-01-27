@@ -20,10 +20,13 @@ export default function reducer(state: AppStateType, action: { type: string; pay
 
     case INSERT_MESSAGE: {
       const { senderId, message } = action.payload
+
       const { chats } = state
       const index = chats.findIndex((chat) => chat.senderId == action.payload.senderId)
       if (index != -1) {
         chats[index] = { senderId, messages: [...chats[index].messages, message] }
+      } else {
+        chats.unshift({ senderId, messages: [message] })
       }
 
       return { ...state, chats }
