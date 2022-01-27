@@ -5,5 +5,5 @@ import { Box } from '@chakra-ui/react'
 // components
 
 export const LockScreen = () => {
-  return <Box>Hello</Box>
+  return <Box>Lockscreen</Box>
 }

@@ -14,7 +14,6 @@ export const Screen = () => {
   const { route, senderId } = state
 
   const Router = () => {
-    // TODO: add routing logic here
     switch (route) {
       case 'home': {
         return <HomeScreen />

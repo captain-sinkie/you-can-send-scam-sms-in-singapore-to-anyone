@@ -1,10 +1,11 @@
 // packages
 import type { NextPage } from 'next'
 // chakra
-import { Box, Center, Flex, Heading, Stack, Spacer, Text } from '@chakra-ui/react'
+import { Box, Center, Flex, Heading, Stack, Spacer, Text, VStack } from '@chakra-ui/react'
 // components
 import { Phone } from '../Components/Phone'
 import { SMSForm } from '../Components/SMSForm'
+import { LockButton } from '../Components/LockButton'
 
 const Home: NextPage = () => {
   return (
@@ -21,7 +22,14 @@ const Home: NextPage = () => {
             </Box>
             <Spacer />
             <Center w="100%">
-              <Phone />
+              <VStack>
+                <Box>
+                  <Phone />
+                </Box>
+                <Box>
+                  <LockButton />
+                </Box>
+              </VStack>
             </Center>
           </Stack>
         </Box>
