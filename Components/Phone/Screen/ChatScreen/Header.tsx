@@ -10,7 +10,8 @@ import { CurrentTime } from '../../../CurrentTime'
 import { HiOutlineChevronLeft } from 'react-icons/hi'
 
 export const Header = () => {
-  const { dispatch } = useMobileRouter()
+  const { state, dispatch } = useMobileRouter()
+  const { senderId } = state
   const redirectHome = () => {
     setRouteDispatch(dispatch, { route: 'home' })
   }
@@ -33,7 +34,7 @@ export const Header = () => {
         </GridItem>
 
         <GridItem textAlign="center" fontWeight="bold">
-          OCBC
+          {senderId}
         </GridItem>
 
         <GridItem />
