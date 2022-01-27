@@ -3,11 +3,11 @@ import { Dispatch } from 'react'
 // constants
 import { SET_ROUTE, SET_SENDER_ID } from './constants'
 // interfaces
-import { MobileRouterStateType } from './interface'
+import { MobileRouterStateType, Route } from './interface'
 
 type setRouteDispatchPayload = {
   senderId?: string
-  route: 'home' | 'chat'
+  route: Route
 }
 
 export const setRouteDispatch = (

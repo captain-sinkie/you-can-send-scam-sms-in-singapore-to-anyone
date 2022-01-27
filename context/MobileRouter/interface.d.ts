@@ -1,4 +1,6 @@
+export type Route = 'home' | 'chat' | 'lockscreen'
+
 export interface MobileRouterStateType {
-  route: 'home' | 'chat'
+  route: Route
   senderId: string
 }

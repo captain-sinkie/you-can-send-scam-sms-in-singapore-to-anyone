@@ -7,9 +7,10 @@ import { useMobileRouter } from '../../../context/MobileRouter'
 // components
 import { ChatScreen } from './ChatScreen'
 import { HomeScreen } from './HomeScreen'
+import { LockScreen } from './LockScreen'
 
 export const Screen = () => {
-  const { state, dispatch } = useMobileRouter()
+  const { state } = useMobileRouter()
   const { route, senderId } = state
 
   const Router = () => {
@@ -21,6 +22,10 @@ export const Screen = () => {
 
       case 'chat': {
         return <ChatScreen senderId={senderId} />
+      }
+
+      case 'lockscreen': {
+        return <LockScreen />
       }
 
       default: {
